@@ -1,0 +1,42 @@
+<%= form_with(model: balatro_hand_type) do |form| %>
+  <% if balatro_hand_type.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(balatro_hand_type.errors.count, "error") %> prohibited this balatro_hand_type from being saved:</h2>
+
+      <ul>
+        <% balatro_hand_type.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :mult_base, style: "display: block" %>
+    <%= form.number_field :mult_base %>
+  </div>
+
+  <div>
+    <%= form.label :mult_increase, style: "display: block" %>
+    <%= form.number_field :mult_increase %>
+  </div>
+
+  <div>
+    <%= form.label :chip_base, style: "display: block" %>
+    <%= form.number_field :chip_base %>
+  </div>
+
+  <div>
+    <%= form.label :chip_increase, style: "display: block" %>
+    <%= form.number_field :chip_increase %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Balatro hand types" %>
+
+<h1>Balatro hand types</h1>
+
+<div id="balatro_hand_types">
+  <% @balatro_hand_types.each do |balatro_hand_type| %>
+    <%= render balatro_hand_type %>
+    <p>
+      <%= link_to "Show this balatro hand type", balatro_hand_type %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New balatro hand type", new_balatro_hand_type_path %>

@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_09_192323) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_28_201937) do
+  create_table "balatro_hand_types", force: :cascade do |t|
+    t.string "name"
+    t.integer "mult_base"
+    t.integer "mult_increase"
+    t.integer "chip_base"
+    t.integer "chip_increase"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sudoku_boards", force: :cascade do |t|
     t.integer "grid_size"
     t.text "grid_content"
