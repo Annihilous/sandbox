@@ -1,0 +1,52 @@
+<%= form_with(model: balatro_card) do |form| %>
+  <% if balatro_card.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(balatro_card.errors.count, "error") %> prohibited this balatro_card from being saved:</h2>
+
+      <ul>
+        <% balatro_card.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.number_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :suit, style: "display: block" %>
+    <%= form.number_field :suit %>
+  </div>
+
+  <div>
+    <%= form.label :chips, style: "display: block" %>
+    <%= form.number_field :chips %>
+  </div>
+
+  <div>
+    <%= form.label :mult, style: "display: block" %>
+    <%= form.number_field :mult %>
+  </div>
+
+  <div>
+    <%= form.label :xmult, style: "display: block" %>
+    <%= form.number_field :xmult %>
+  </div>
+
+  <div>
+    <%= form.label :trigger_count, style: "display: block" %>
+    <%= form.number_field :trigger_count %>
+  </div>
+
+  <div>
+    <%= form.label :is_debuffed, style: "display: block" %>
+    <%= form.check_box :is_debuffed %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

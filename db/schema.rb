@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_28_201937) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_28_224624) do
+  create_table "balatro_cards", force: :cascade do |t|
+    t.integer "name"
+    t.integer "suit"
+    t.integer "chips"
+    t.integer "mult", default: 0, null: false
+    t.integer "xmult", default: 0, null: false
+    t.integer "trigger_count", default: 1, null: false
+    t.boolean "is_debuffed", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "balatro_hand_types", force: :cascade do |t|
     t.string "name"
     t.integer "mult_base"
