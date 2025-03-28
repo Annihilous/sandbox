@@ -1,0 +1,11 @@
+<% content_for :title, "New sudoku board" %>
+
+<h1>New sudoku board</h1>
+
+<%= render "form", sudoku_board: @sudoku_board %>
+
+<br>
+
+<div>
+  <%= link_to "Back to sudoku boards", sudoku_boards_path %>
+</div>

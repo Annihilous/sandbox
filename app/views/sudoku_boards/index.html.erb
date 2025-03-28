@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Sudoku boards" %>
+
+<h1>Sudoku boards</h1>
+
+<div id="sudoku_boards">
+  <% @sudoku_boards.each do |sudoku_board| %>
+    <%= render sudoku_board %>
+    <p>
+      <%= link_to "Show this sudoku board", sudoku_board %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New sudoku board", new_sudoku_board_path %>

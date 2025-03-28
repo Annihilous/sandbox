@@ -1,0 +1,2 @@
+module SudokuBoardsHelper
+end

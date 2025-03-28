@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @sudoku_board %>
+
+<div>
+  <%= link_to "Edit this sudoku board", edit_sudoku_board_path(@sudoku_board) %> |
+  <%= link_to "Back to sudoku boards", sudoku_boards_path %>
+
+  <%= button_to "Destroy this sudoku board", @sudoku_board, method: :delete %>
+</div>
