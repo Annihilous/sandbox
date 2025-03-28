@@ -1,0 +1,12 @@
+<% content_for :title, "Editing balatro card" %>
+
+<h1>Editing balatro card</h1>
+
+<%= render "form", balatro_card: @balatro_card %>
+
+<br>
+
+<div>
+  <%= link_to "Show this balatro card", @balatro_card %> |
+  <%= link_to "Back to balatro cards", balatro_cards_path %>
+</div>

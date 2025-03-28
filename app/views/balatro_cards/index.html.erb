@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Balatro cards" %>
+
+<h1>Balatro cards</h1>
+
+<div id="balatro_cards">
+  <% @balatro_cards.each do |balatro_card| %>
+    <%= render balatro_card %>
+    <p>
+      <%= link_to "Show this balatro card", balatro_card %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New balatro card", new_balatro_card_path %>
