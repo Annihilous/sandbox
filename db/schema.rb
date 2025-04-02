@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_28_224624) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_28_231736) do
+  create_table "balatro_card_balatro_hands", force: :cascade do |t|
+    t.integer "balatro_card_id", null: false
+    t.integer "balatro_hand_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["balatro_card_id"], name: "index_balatro_card_balatro_hands_on_balatro_card_id"
+    t.index ["balatro_hand_id"], name: "index_balatro_card_balatro_hands_on_balatro_hand_id"
+  end
+
   create_table "balatro_cards", force: :cascade do |t|
     t.integer "name"
     t.integer "suit"
@@ -33,6 +42,15 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_28_224624) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "balatro_hands", force: :cascade do |t|
+    t.string "name"
+    t.integer "balatro_hand_type_id", null: false
+    t.integer "chip_total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["balatro_hand_type_id"], name: "index_balatro_hands_on_balatro_hand_type_id"
+  end
+
   create_table "sudoku_boards", force: :cascade do |t|
     t.integer "grid_size"
     t.text "grid_content"
@@ -45,4 +63,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_28_224624) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "balatro_card_balatro_hands", "balatro_cards"
+  add_foreign_key "balatro_card_balatro_hands", "balatro_hands"
+  add_foreign_key "balatro_hands", "balatro_hand_types"
 end
