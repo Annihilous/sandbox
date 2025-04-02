@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @balatro_hand %>
+
+<div>
+  <%= link_to "Edit this balatro hand", edit_balatro_hand_path(@balatro_hand) %> |
+  <%= link_to "Back to balatro hands", balatro_hands_path %>
+
+  <%= button_to "Destroy this balatro hand", @balatro_hand, method: :delete %>
+</div>

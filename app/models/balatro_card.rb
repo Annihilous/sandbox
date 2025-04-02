@@ -7,6 +7,9 @@ class BalatroCard < ApplicationRecord
     'Diamonds' => 4
   }
 
+  has_many :balatro_card_balatro_hands
+  has_many :balatro_hands, through: :balatro_card_balatro_hands
+
   validates :name,
             :suit,
             :chips,

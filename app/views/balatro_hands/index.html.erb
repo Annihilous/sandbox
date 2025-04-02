@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Balatro hands" %>
+
+<h1>Balatro hands</h1>
+
+<div id="balatro_hands">
+  <% @balatro_hands.each do |balatro_hand| %>
+    <%= render balatro_hand %>
+    <p>
+      <%= link_to "Show this balatro hand", balatro_hand %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New balatro hand", new_balatro_hand_path %>

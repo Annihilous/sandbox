@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :balatro_hands
   resources :balatro_cards
   resources :balatro_hand_types
   resources :sudoku_boards
