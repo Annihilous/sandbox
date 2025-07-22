@@ -22,6 +22,11 @@
 !/tmp/pids/
 !/tmp/pids/.keep
 
+# Ignore RSpec artifacts and temp files
+.rspec_status
+examples.txt
+spec/.DS_Store
+
 # Ignore storage (uploaded files in development and any SQLite databases).
 /storage/*
 !/storage/.keep
