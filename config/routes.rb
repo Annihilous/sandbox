@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :balatro_hands
   resources :balatro_cards
   resources :balatro_hand_types
+
+  get "claude/banner_image"
+
   resources :sudoku_boards
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
